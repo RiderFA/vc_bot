@@ -26,13 +26,13 @@ async def start(client, message):
         InlineKeyboardButton('🏘️ Group', url='https://t.me/RIDERIANS'),
     ],
     [
-        InlineKeyboardButton('⚙️ HELP ⚙️', callback_data='help'),
+        InlineKeyboardButton('⚙️ HELP ⚙️', callback_data='HELP'),
         
     ]
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply_text(
-        f"""  = "💖 **I'm **PÎSTÂ Music Bot** \nI Can Play Radio/Stream Music In Channels & Groups 24x7 Nonstop!\n\n**😉 Happy Streaming 😉**""".format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup))
+        f"""  = "💖 **I'm **PÎSTÂ Music Bot** \nI Can Play Radio/Stream Music In Channels & Groups 24x7 Nonstop!\n\n**😉 Happy Streaming 😉**""")
     
 
 @Client.on_message(filters.command("help"))
