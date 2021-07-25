@@ -41,7 +41,7 @@ async def start(_, message: Message):
     await message.reply_text(
         f"""This Command Can Only Be Used In Group Or Channel"""
 
-from pyrogram import youtube_dl
+import youtube_dl
 from youtube_search import YoutubeSearch
 import requests
 
