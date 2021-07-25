@@ -40,4 +40,4 @@ async def show_help(client, message):
 async def start(_, message: Message):
     await message.reply_text(
         f"""This Command Can Only Be Used In Group Or Channel
-        """
+        """)
