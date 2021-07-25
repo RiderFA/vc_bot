@@ -32,7 +32,7 @@ async def start(client, message):
     ]
     reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply_text(
-        f"""  = "💖 **Hi [{}](tg://user?id={})**,\n\nI'm **PÎSTÂ Music Bot** \nI Can Play Radio/Stream Music In Channels & Groups 24x7 Nonstop!\n\n**😉 Happy Streaming 😉**".format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup)
+        f"""  = "💖 **Hi [{}](tg://user?id={})**,\n\nI'm **PÎSTÂ Music Bot** \nI Can Play Radio/Stream Music In Channels & Groups 24x7 Nonstop!\n\n**😉 Happy Streaming 😉**""".format(message.from_user.first_name, message.from_user.id), reply_markup=reply_markup)
     
 
 @Client.on_message(filters.command("help"))
