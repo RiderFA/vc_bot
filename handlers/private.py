@@ -1,4 +1,16 @@
-from pyrogram import Client
+from pyrogram import Client, filters
+
+import youtube_dl
+from youtube_search import YoutubeSearch
+import requests
+
+import os
+
+# Convert hh:mm:ss to seconds
+def time_to_seconds(time):
+    stringt = str(time)
+    return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
+
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 from config import BOT_NAME as bn
@@ -40,18 +52,6 @@ async def show_help(client, message):
 async def start(_, message: Message):
     await message.reply_text(
         f"""This Command Can Only Be Used In Group Or Channel"""
-
-import youtube_dl
-from youtube_search import YoutubeSearch
-import requests
-
-import os
-
-# Convert hh:mm:ss to seconds
-def time_to_seconds(time):
-    stringt = str(time)
-    return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(':'))))
-
 
 @Client.on_message(filters.command(['song']))
 def a(client, message):
