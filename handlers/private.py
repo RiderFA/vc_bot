@@ -5,7 +5,7 @@ from config import BOT_NAME as bn
 from helpers.filters import filters
 
 
-HOME_TEXT = "💖 **Hi [{}](tg://user?id={})**,\n\nI'm **PÎSTÂ MÚSÎC ẞø†** \nI Can Play Music In Channels & Groups 24x7 Nonstop!\n**😉 Happy Streaming 😉**\n**Type `/help` To Get Help Menu**\n**Currently I am under a private vc music player ⏩**\n** To add me take permission from [Owner](https://t.me/backup_pista123)**"
+HOME_TEXT = "💖 **Hi [{}](tg://user?id={})**,\n\nI'm **PÎSTÂ MÚSÎC ẞø†** \nI Can Play Music In Channels & Groups 24x7 Nonstop!\n😉 Happy Streaming 😉\nType `/help` To Get Help Menu\nCurrently I am under a private vc music player ⏩\n To add me take permission from [Owner](https://t.me/backup_pista123)"
 HELP = """•The commands I currently support are:
 ⚜️ /play - __Plays the replied audio file or YouTube video through link.__
 ⚜️ /pause - __Pause Voice Chat Music.__
