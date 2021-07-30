@@ -4,7 +4,7 @@ from pyrogram import Client
 from pyrogram.types import Message
 
 import callsmusic
-
+from utils.vc import mp
 from config import BOT_NAME as BN
 from helpers.filters import command, other_filters
 from helpers.decorators import errors, authorized_users_only
@@ -19,7 +19,7 @@ async def pause(_, message: Message):
     ) or (
             callsmusic.pytgcalls.active_calls[message.chat.id] == 'paused'
     ):
-        await message.reply_text(f"**{BN} :-** 🙄 Nothing is playing My boss is saying!")
+        await message.reply_text(f"**{BN} :-** 🙄 Nothing is playing!")
     else:
         callsmusic.pytgcalls.pause_stream(message.chat.id)
         await message.reply_text(f"**{BN} :-** 🤐 Paused by MR. RØBØT!")
@@ -34,7 +34,7 @@ async def resume(_, message: Message):
     ) or (
             callsmusic.pytgcalls.active_calls[message.chat.id] == 'playing by MR. RØBØT'
     ):
-        await message.reply_text(f"**{BN} :-** 🙄 Nothing is paused told by @backup_pista123!")
+        await message.reply_text(f"**{BN} :-** 🙄 Nothing is paused!")
     else:
         callsmusic.pytgcalls.resume_stream(message.chat.id)
         await message.reply_text(f"**{BN} :-** 🥳 Resumed by MR. RØBØT!")
@@ -45,7 +45,7 @@ async def resume(_, message: Message):
 @authorized_users_only
 async def stop(_, message: Message):
     if message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text(f"**{BN} :-** 🙄 Nothing is streaming my boss!")
+        await message.reply_text(f"**{BN} :-** 🙄 Nothing is streaming dear!")
     else:
         try:
             callsmusic.queues.clear(message.chat.id)
@@ -61,7 +61,7 @@ async def stop(_, message: Message):
 @authorized_users_only
 async def skip(_, message: Message):
     if message.chat.id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text(f"**{BN} :-** 🙄 Nothing is playing to skip hehe don't make fools!")
+        await message.reply_text(f"**{BN} :-** 🙄 Nothing is playing to skip hehe don't make fool!")
     else:
         callsmusic.queues.task_done(message.chat.id)
 
@@ -73,7 +73,7 @@ async def skip(_, message: Message):
                 callsmusic.queues.get(message.chat.id)["file_path"]
             )
 
-        await message.reply_text(f"**{BN} :-** 😬 Skipped the current song fools!")
+        await message.reply_text(f"**{BN} :-** 😬 Skipped the current song!")
         
         
 @Client.on_message(command("current") & other_filters)
