@@ -1,5 +1,8 @@
 import os
 import re
+from os import getenv
+from dotenv import load_dotenv
+load_dotenv()
 
 SESSION_NAME = getenv("SESSION_NAME", "session")
 class Config:
