@@ -94,5 +94,3 @@ async def show_current_playing_time(client, m: Message):
         f"{timedelta(seconds=playlist[0].audio.duration)}",
         disable_notification=True
     )
-await m.delete()
-
