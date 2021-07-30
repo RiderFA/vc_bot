@@ -33,7 +33,7 @@ async def start(_, message: Message):
                         "Group 💬", url="https://t.me/Riderians"
                     ),
                     InlineKeyboardButton(
-                        "⚙ HELP ⚙", callback_data="HELP"
+                        "💫Another Bot💫", url="https://t.me/music_robo2_bot"
                     ),
                     InlineKeyboardButton(
                         "Owner 👑", url="https://t.me/backup_Pista123"
