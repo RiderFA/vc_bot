@@ -36,14 +36,14 @@ async def start(_, message: Message):
                         "⚙ HELP ⚙", callback_data="HELP"
                     ),
                     InlineKeyboardButton(
-                        "Owner 👑", url="https://t.me/backup_Pista122"
+                        "Owner 👑", url="https://t.me/backup_Pista123"
                     )
                 ]
             ]
         )
     )
 @Client.on_message(filters.command("help"))
-async def show_help(client, message):
+async def help(client, message):
     await message.reply_text(HELP)
 
 @Client.on_message(filters.command("play"))
