@@ -39,11 +39,6 @@ async def start(client, message):
 async def show_help(client, message):
     await message.reply_text(HELP)
 
-@Client.on_message(filters.command("play"))
-async def start(_, message: Message):
-    await message.reply_text(
-        f"""This Command Can Only Be Used In Group Or Channel """)
-
 from pyrogram import Client, filters
 
 import youtube_dl
