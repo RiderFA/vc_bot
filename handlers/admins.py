@@ -75,22 +75,3 @@ async def skip(_, message: Message):
 
         await message.reply_text(f"**{BN} :-** 😬 Skipped the current song!")
         
-        
-@Client.on_message(command("current") & other_filters)
-@errors
-@authorized_users_only
-async def show_current_playing_time(client, m: Message):
-    start_time = mp.start_time
-    playlist = mp.playlist
-    if not start_time:
-        reply = await m.reply_text(f"{emoji.PLAY_BUTTON} unknown")
-        await _delay_delete_messages((reply, m), DELETE_DELAY)
-        return
-    utcnow = datetime.utcnow().replace(microsecond=0)
-    if mp.msg.get('current') is not None:
-        await mp.msg['current'].delete()
-    mp.msg['current'] = await playlist[0].reply_text(
-        f"{emoji.PLAY_BUTTON}  {utcnow - start_time} / "
-        f"{timedelta(seconds=playlist[0].audio.duration)}",
-        disable_notification=True
-    )
